@@ -1,4 +1,6 @@
 // DEPENDENCIES
+//const express = require('express');
+//const router = express.Router();
 // REQUIRE MODELS
 const db = require('../models');
 
@@ -7,7 +9,8 @@ module.exports = function(app) {
 
     // Get route for burgers
     app.get('/', function(req, res) {
-        db.Burger.findAll().then(function(result) {
+        db.Burger.findAll({}).then(function(result) {
+            res.json(result);
             let hbsObj = {
                 burgers: result
             };
