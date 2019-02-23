@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let Burger = sequelize.define('burgers', {
+    const Burger = sequelize.define('burger', {
         burger_name: {
             type: DataTypes.STRING,
             allowNull: false
