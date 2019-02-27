@@ -4,11 +4,12 @@ $(function() {
         let eaten = $(this).data('eaten');
 
         let eatenState = {
-            devoured: 1
+            devoured: 1,
+            id: id
         };
 
         // Send the PUT request
-        $.ajax(`/api/burgers/${id}`, {
+        $.ajax(`/api/burgers`, {
             type: 'PUT',
             data: eatenState
         }).then(
@@ -23,7 +24,7 @@ $(function() {
         event.preventDefault();
 
         let newBurger = {
-            burger_name: $('#brgr').val().trim(),
+            burger_name: $('#brgr').val().trim()
         };
 
         // Send the POST request
